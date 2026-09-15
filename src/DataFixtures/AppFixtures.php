@@ -6,11 +6,11 @@ use App\Entity\Eisdiele;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class EisdieleFixtures extends Fixture
+final class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $daten = [
+        $eisdielen = [
             [
                 'name' => 'Eiscafé Sarcletti',
                 'stadt' => 'München',
@@ -29,14 +29,21 @@ class EisdieleFixtures extends Fixture
                 'bewertung' => 4.9,
                 'lieblingssorte' => 'Mango',
             ],
+            [
+                'name' => 'Eisdiele Deggendorf',
+                'stadt' => 'Deggendorf',
+                'bewertung' => 2.9,
+                'lieblingssorte' => 'Schlumpf',
+            ],
         ];
 
-        foreach ($daten as $eintrag) {
+        foreach ($eisdielen as $data) {
             $eisdiele = new Eisdiele();
-            $eisdiele->setName($eintrag['name']);
-            $eisdiele->setStadt($eintrag['stadt']);
-            $eisdiele->setBewertung($eintrag['bewertung']);
-            $eisdiele->setLieblingssorte($eintrag['lieblingssorte']);
+
+            $eisdiele->setName($data['name']);
+            $eisdiele->setStadt($data['stadt']);
+            $eisdiele->setBewertung($data['bewertung']);
+            $eisdiele->setLieblingssorte($data['lieblingssorte']);
 
             $manager->persist($eisdiele);
         }
