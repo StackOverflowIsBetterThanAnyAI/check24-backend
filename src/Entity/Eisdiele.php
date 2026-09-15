@@ -14,23 +14,23 @@ class Eisdiele
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private string $name;
 
     #[ORM\Column(length: 255)]
-    private ?string $stadt = null;
+    private string $stadt;
 
     #[ORM\Column]
-    private ?float $bewertung = null;
+    private float $bewertung;
 
     #[ORM\Column(length: 255)]
-    private ?string $lieblingssorte = null;
+    private string $lieblingssorte;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -42,7 +42,7 @@ class Eisdiele
         return $this;
     }
 
-    public function getStadt(): ?string
+    public function getStadt(): string
     {
         return $this->stadt;
     }
@@ -54,7 +54,7 @@ class Eisdiele
         return $this;
     }
 
-    public function getBewertung(): ?float
+    public function getBewertung(): float
     {
         return $this->bewertung;
     }
@@ -66,7 +66,7 @@ class Eisdiele
         return $this;
     }
 
-    public function getLieblingssorte(): ?string
+    public function getLieblingssorte(): string
     {
         return $this->lieblingssorte;
     }
