@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class EisdieleController extends AbstractController
 {
-    #[Route('/eisdielen', name: 'app_eisdiele')]
+    #[Route('/eisdielen', name: 'app_eisdiele', methods: ['GET'])]
     public function index(EisdieleRepository $repository): Response
     {
         $eisdielen = $repository->findAll();
